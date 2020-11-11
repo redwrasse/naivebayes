@@ -3,13 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>Naive Bayes</title>
+<style type="text/css">
+    #likelihoods tr {
+        cursor: pointer;
+    }
+    #likelihoods div.bar {
+        height: 1em;
+        background: #80C0FF;
+    }
+    #likelihoods tr.active {
+        font-weight: bold;
+    }
+    #likelihoods tr.active div.bar {
+        background: #60A0FF;
+    }
+</style>
 </head>
 <body>
 <div class="vert-main">
     <div class="horz-main">
         <article>
-
-
             <h2>Naive Bayes</h2>
             <noscript>
                 <p>This requires JavaScript, which is not supported by your browser or is disabled.</p>
@@ -43,20 +56,23 @@
                     </tbody>
                 </table>
             </form>
-            <script>
-                function setDoc(source, elementId) {
-                    fetch(source)
-                        .then(response => response.text())
-                        .then((data) => {
-                            document.getElementById(elementId).value = data;
-                        });
-                }
-                setDoc('./docA.txt', 'docA');
-                setDoc('./docB.txt', 'docB');
-                setDoc('./docC.txt', 'docC');
-            </script>
-
-
+            <tr>
+<!--                <td>Results:</td>-->
+                <td>
+                    <table class="col1right col2right" style="font-size:70%;
+                    margin-left:8em;
+                    margin-top:1em">
+                        <thead>
+                        <tr>
+                            <th>Document</th>
+                            <th colspan="2">Likelihood<span style="font-weight:normal"></span></th>
+                        </tr>
+                        </thead>
+                        <tbody id="likelihoods"></tbody>
+                    </table>
+                </td>
+            </tr>
+            <script src="naivebayes.js"></script>
         </article>
 
     </div>
