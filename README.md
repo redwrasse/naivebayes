@@ -1,2 +1,4 @@
 Naive Bayes
 ---
+
+![](./naivebayes.gif)
