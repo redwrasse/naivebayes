@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Naive Bayes</title>
+</head>
+<body>
+<div class="vert-main">
+    <div class="horz-main">
+        <article>
+
+
+            <h2>Naive Bayes</h2>
+            <noscript>
+                <p>This requires JavaScript, which is not supported by your browser or is disabled.</p>
+            </noscript>
+            <form action="#" method="get" onsubmit="return false;">
+                <table class="noborder">
+                    <tbody>
+                    <tr>
+                        <td><label for="text">Query</label></td>
+                        <td><textarea id="query" cols="50" rows="10" style="width:40em; height:2em">It's a long way to Kansas.</textarea></td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="text">Document A</label></td>
+                        <td><textarea id="docA" cols="50" rows="10" style="width:40em; height:5em"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td><label for="text">Document B</label></td>
+                        <td><textarea id="docB" cols="50" rows="10" style="width:40em; height:5em"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td><label for="text">Document C</label></td>
+                        <td><textarea id="docC" cols="50" rows="10" style="width:40em; height:5em"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input type="button" value="Likelihoods" onclick="doCrypt(true);"/>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </form>
+            <script>
+                function setDoc(source, elementId) {
+                    fetch(source)
+                        .then(response => response.text())
+                        .then((data) => {
+                            document.getElementById(elementId).value = data;
+                        });
+                }
+                setDoc('./docA.txt', 'docA');
+                setDoc('./docB.txt', 'docB');
+                setDoc('./docC.txt', 'docC');
+            </script>
+
+
+        </article>
+
+    </div>
+</body>
+</html>
