@@ -1,4 +1,4 @@
-Reference www.redwrasse.io/supplementals/naivebayes.html
+Reference www.redwrasse.io/supplementals/naivebayes
 
 
 ![](./naivebayes.gif)
