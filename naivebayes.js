@@ -11,8 +11,6 @@ setDoc('./docA.txt', 'docA');
 setDoc('./docB.txt', 'docB');
 setDoc('./docC.txt', 'docC');
 
-var likelihoodsElement = document.getElementById("likelihoods");
-clearChildren(likelihoodsElement);
 
 const docs = ["docA", "docB", "docC"];
 const names = {
@@ -21,19 +19,38 @@ const names = {
     "docC": "Document C",
 };
 
-for (var i = 0; i < docs.length; i++) {
-    var tr = likelihoodsElement.appendChild(document.createElement("tr"));
-    var td = tr.appendChild(document.createElement("td"));
-    td.textContent = names[docs[i]];
+function naiveBayes() {
 
-    td = tr.appendChild(document.createElement("td"));
-    var p = Math.random();
-    td.textContent = `${p}`;
+    var likelihoodsElement = document.getElementById("likelihoods");
+    clearChildren(likelihoodsElement);
+    let results = computeNaiveBayes();
 
-    td = tr.appendChild(document.createElement("td"));
-    var div = td.appendChild((document.createElement("div")));
-    div.classList.add("bar");
-    div.style.width = `${Math.floor(p*40)}em`;
+    for (var i = 0; i < docs.length; i++) {
+        var tr = likelihoodsElement.appendChild(document.createElement("tr"));
+        var td = tr.appendChild(document.createElement("td"));
+        td.textContent = names[docs[i]];
+
+        td = tr.appendChild(document.createElement("td"));
+        var p = results[docs[i]];
+        td.textContent = `${(p * 100).toFixed(1)}%`;
+
+        td = tr.appendChild(document.createElement("td"));
+        var div = td.appendChild((document.createElement("div")));
+        div.classList.add("bar");
+        div.style.width = `${Math.floor(p*40)}em`;
+    }
+
+}
+
+// Compute Naive Bayes for given query and documents
+function computeNaiveBayes() {
+    // todo("implement")
+    let results = {
+        "docA": Math.random(),
+        "docB": Math.random(),
+        "docC": Math.random(),
+    };
+    return results;
 }
 
 
