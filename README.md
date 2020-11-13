@@ -1,7 +1,7 @@
 
 
 ### Run
-https://redwrasse.github.io/naivebayes/
+[Launch](https://redwrasse.github.io/naivebayes/)
 
 
 ### Screenshot
