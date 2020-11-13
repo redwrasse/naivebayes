@@ -1,7 +1,7 @@
 
 
 ### Run
-Try it: https://redwrasse.github.io/naivebayes/
+https://redwrasse.github.io/naivebayes/
 
 
 ### Screenshot
