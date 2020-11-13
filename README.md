@@ -8,5 +8,5 @@
 ![](./naivebayes.gif)
 
 
-### Reference
-* www.redwrasse.io/supplementals/naivebayes
+### References
+* [Internal Notes](www.redwrasse.io/supplementals/naivebayes)
